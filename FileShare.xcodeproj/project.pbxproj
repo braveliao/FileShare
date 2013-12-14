@@ -18,6 +18,12 @@
 		E3AB8F89185B44720062EED0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3AB8F88185B44720062EED0 /* Default-568h@2x.png */; };
 		E3AB8F8C185B44720062EED0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AB8F8B185B44720062EED0 /* ViewController.m */; };
 		E3AB8F8F185B44720062EED0 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3AB8F8D185B44720062EED0 /* ViewController.xib */; };
+		E3BE2DA8185C72A80051A0CD /* THFTPAPI.c in Sources */ = {isa = PBXBuildFile; fileRef = E3BE2DA6185C72A80051A0CD /* THFTPAPI.c */; };
+		E3BE2DAA185C74BA0051A0CD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3BE2DA9185C74BA0051A0CD /* CFNetwork.framework */; };
+		E3E08C32185C0B8E004AD74C /* FileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E08C30185C0B8E004AD74C /* FileListViewController.m */; };
+		E3E08C33185C0B8E004AD74C /* FileListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3E08C31185C0B8E004AD74C /* FileListViewController.xib */; };
+		E3E08C36185C1B8B004AD74C /* FTPFileUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E08C35185C1B8B004AD74C /* FTPFileUpload.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E3E08C38185C1BF8004AD74C /* 12.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E3E08C37185C1BF8004AD74C /* 12.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,15 @@
 		E3AB8F8A185B44720062EED0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E3AB8F8B185B44720062EED0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E3AB8F8E185B44720062EED0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		E3BE2DA6185C72A80051A0CD /* THFTPAPI.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = THFTPAPI.c; sourceTree = "<group>"; };
+		E3BE2DA7185C72A80051A0CD /* THFTPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THFTPAPI.h; sourceTree = "<group>"; };
+		E3BE2DA9185C74BA0051A0CD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E3E08C2F185C0B8E004AD74C /* FileListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileListViewController.h; sourceTree = "<group>"; };
+		E3E08C30185C0B8E004AD74C /* FileListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileListViewController.m; sourceTree = "<group>"; };
+		E3E08C31185C0B8E004AD74C /* FileListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileListViewController.xib; sourceTree = "<group>"; };
+		E3E08C34185C1B8B004AD74C /* FTPFileUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPFileUpload.h; sourceTree = "<group>"; };
+		E3E08C35185C1B8B004AD74C /* FTPFileUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPFileUpload.m; sourceTree = "<group>"; };
+		E3E08C37185C1BF8004AD74C /* 12.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = 12.pdf; path = document/12.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3BE2DAA185C74BA0051A0CD /* CFNetwork.framework in Frameworks */,
 				E3AB8F73185B44720062EED0 /* UIKit.framework in Frameworks */,
 				E3AB8F75185B44720062EED0 /* Foundation.framework in Frameworks */,
 				E3AB8F77185B44720062EED0 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +89,7 @@
 		E3AB8F71185B44720062EED0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E3BE2DA9185C74BA0051A0CD /* CFNetwork.framework */,
 				E3AB8F72185B44720062EED0 /* UIKit.framework */,
 				E3AB8F74185B44720062EED0 /* Foundation.framework */,
 				E3AB8F76185B44720062EED0 /* CoreGraphics.framework */,
@@ -83,11 +100,15 @@
 		E3AB8F78185B44720062EED0 /* FileShare */ = {
 			isa = PBXGroup;
 			children = (
+				E3E08C2A185C0946004AD74C /* baseLibrary */,
 				E3AB8F81185B44720062EED0 /* AppDelegate.h */,
 				E3AB8F82185B44720062EED0 /* AppDelegate.m */,
 				E3AB8F8A185B44720062EED0 /* ViewController.h */,
 				E3AB8F8B185B44720062EED0 /* ViewController.m */,
 				E3AB8F8D185B44720062EED0 /* ViewController.xib */,
+				E3E08C2F185C0B8E004AD74C /* FileListViewController.h */,
+				E3E08C30185C0B8E004AD74C /* FileListViewController.m */,
+				E3E08C31185C0B8E004AD74C /* FileListViewController.xib */,
 				E3AB8F79185B44720062EED0 /* Supporting Files */,
 			);
 			path = FileShare;
@@ -96,6 +117,7 @@
 		E3AB8F79185B44720062EED0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E3E08C37185C1BF8004AD74C /* 12.pdf */,
 				E3AB8F7A185B44720062EED0 /* FileShare-Info.plist */,
 				E3AB8F7B185B44720062EED0 /* InfoPlist.strings */,
 				E3AB8F7E185B44720062EED0 /* main.m */,
@@ -105,6 +127,25 @@
 				E3AB8F88185B44720062EED0 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E3E08C2A185C0946004AD74C /* baseLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				E3E08C2B185C0946004AD74C /* ftp */,
+			);
+			path = baseLibrary;
+			sourceTree = "<group>";
+		};
+		E3E08C2B185C0946004AD74C /* ftp */ = {
+			isa = PBXGroup;
+			children = (
+				E3BE2DA6185C72A80051A0CD /* THFTPAPI.c */,
+				E3BE2DA7185C72A80051A0CD /* THFTPAPI.h */,
+				E3E08C34185C1B8B004AD74C /* FTPFileUpload.h */,
+				E3E08C35185C1B8B004AD74C /* FTPFileUpload.m */,
+			);
+			path = ftp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +204,8 @@
 				E3AB8F87185B44720062EED0 /* Default@2x.png in Resources */,
 				E3AB8F89185B44720062EED0 /* Default-568h@2x.png in Resources */,
 				E3AB8F8F185B44720062EED0 /* ViewController.xib in Resources */,
+				E3E08C33185C0B8E004AD74C /* FileListViewController.xib in Resources */,
+				E3E08C38185C1BF8004AD74C /* 12.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +219,9 @@
 				E3AB8F7F185B44720062EED0 /* main.m in Sources */,
 				E3AB8F83185B44720062EED0 /* AppDelegate.m in Sources */,
 				E3AB8F8C185B44720062EED0 /* ViewController.m in Sources */,
+				E3E08C32185C0B8E004AD74C /* FileListViewController.m in Sources */,
+				E3E08C36185C1B8B004AD74C /* FTPFileUpload.m in Sources */,
+				E3BE2DA8185C72A80051A0CD /* THFTPAPI.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +344,7 @@
 				E3AB8F94185B44720062EED0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
