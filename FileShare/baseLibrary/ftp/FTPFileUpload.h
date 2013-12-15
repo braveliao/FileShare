@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "CFNetwork/CFFTPStream.h"
-//#import "FunctionLib.h"
 
 enum {
     kSendBufferSize = 32768
@@ -24,6 +23,7 @@ enum {
           Password : (NSString *)password
         UploadPath : (NSString *)uploadPath
      LocalFilePath : (NSString *)localFilePath;
+- (void)ftpDownload ;
 
 @end
 

@@ -107,7 +107,7 @@
  //   _status.text = statusString;
 }
 
--(void)InitFTPInfo : (NSString *)account
+- (void)InitFTPInfo : (NSString *)account
           Password : (NSString *)password
         UploadPath : (NSString *)uploadPath
      LocalFilePath : (NSString *)localFilePath {
@@ -143,6 +143,36 @@
     CFRelease(ftpStream);    
 }
 
+//test
+- (void)ftpDownload {
+        CFReadStreamRef ftpStream2;
+        NSURL *url;
+        
+        //获得地址
+        url = [NSURL URLWithString:@"ftp://192.168.1.107"];
+        
+        NSLog(@"url is %@",url);
+        
+        // 为文件存储路径打开流，filePath为文件写入的路径,hello为图片的名字，具体可换成自己的路径
+        NSString* filePath = @"/Users/yangguang/Desktop/hello.png";
+        self.fileStream = [NSOutputStream outputStreamToFileAtPath:filePath append:NO];
+        [self.fileStream open];
+        
+        // 打开CFFTPStream
+        ftpStream2 = CFReadStreamCreateWithFTPURL(NULL, (CFURLRef) url);
+        self.networkStream = (NSInputStream *) ftpStream2;
+        assert(ftpStream2 != NULL);
+        
+        // 设置代理
+        self.networkStream.delegate = self;
+        
+        // 启动循环
+        [self.networkStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        [self.networkStream open];  
+        
+        //释放链接  
+        CFRelease(ftpStream2);
+     }
 
 - (void)dealloc {
 	[super dealloc];

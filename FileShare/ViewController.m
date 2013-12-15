@@ -10,10 +10,12 @@
 #import "THFTPAPI.h"
 #import "FileListViewController.h"
 #import "FTPFileUpload.h"
+#import "FTPFileDownload.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) FTPFileUpload *fileAdapter;
+@property (nonatomic, strong) FTPFileDownload *fileDownAdapter;
 
 @end
 
@@ -23,16 +25,24 @@
 {
     [super viewDidLoad];
     self.fileAdapter = [[FTPFileUpload alloc] init];
+    self.fileDownAdapter = [[FTPFileDownload alloc] init];
     //upload
 }
 
-- (void)uploadfile
+- (IBAction)ftpUploadBtn:(id)sender
 {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Default" ofType:@"png"];
     [self.fileAdapter InitFTPInfo:@"liaoyong" Password:@"redcdn" UploadPath:@"ftp://192.168.1.107" LocalFilePath:filePath];
 
     NSLog(@"upload file...");
 }
+
+- (IBAction)ftpDownloadBtn:(id)sender
+{
+    [self.fileDownAdapter ftpDownload];
+    NSLog(@"download file...");
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -54,9 +64,7 @@
         return;
     }
     
-    [self uploadfile];
-    
- //   FileListViewController *ctrView = [[FileListViewController alloc] init];
- //   [self.navigationController pushViewController:ctrView animated:YES];
+    FileListViewController *ctrView = [[FileListViewController alloc] init];
+    [self.navigationController pushViewController:ctrView animated:YES];
 }
 @end

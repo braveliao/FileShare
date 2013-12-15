@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FTPFileUpload.h"
 
 @interface ViewController : UIViewController {
 }
 
 - (IBAction)loginBtn:(id)sender;
+- (IBAction)ftpDownloadBtn:(id)sender;
+- (IBAction)ftpUploadBtn:(id)sender;
 
 @end

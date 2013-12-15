@@ -24,6 +24,7 @@
 		E3E08C33185C0B8E004AD74C /* FileListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3E08C31185C0B8E004AD74C /* FileListViewController.xib */; };
 		E3E08C36185C1B8B004AD74C /* FTPFileUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E08C35185C1B8B004AD74C /* FTPFileUpload.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E3E08C38185C1BF8004AD74C /* 12.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E3E08C37185C1BF8004AD74C /* 12.pdf */; };
+		E3EA6131185D40DD0001B6F3 /* FTPFileDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = E3EA6130185D40DC0001B6F3 /* FTPFileDownload.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		E3E08C34185C1B8B004AD74C /* FTPFileUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPFileUpload.h; sourceTree = "<group>"; };
 		E3E08C35185C1B8B004AD74C /* FTPFileUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPFileUpload.m; sourceTree = "<group>"; };
 		E3E08C37185C1BF8004AD74C /* 12.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = 12.pdf; path = document/12.pdf; sourceTree = "<group>"; };
+		E3EA612F185D40DC0001B6F3 /* FTPFileDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPFileDownload.h; sourceTree = "<group>"; };
+		E3EA6130185D40DC0001B6F3 /* FTPFileDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPFileDownload.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 				E3BE2DA7185C72A80051A0CD /* THFTPAPI.h */,
 				E3E08C34185C1B8B004AD74C /* FTPFileUpload.h */,
 				E3E08C35185C1B8B004AD74C /* FTPFileUpload.m */,
+				E3EA612F185D40DC0001B6F3 /* FTPFileDownload.h */,
+				E3EA6130185D40DC0001B6F3 /* FTPFileDownload.m */,
 			);
 			path = ftp;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				E3E08C32185C0B8E004AD74C /* FileListViewController.m in Sources */,
 				E3E08C36185C1B8B004AD74C /* FTPFileUpload.m in Sources */,
 				E3BE2DA8185C72A80051A0CD /* THFTPAPI.c in Sources */,
+				E3EA6131185D40DD0001B6F3 /* FTPFileDownload.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
