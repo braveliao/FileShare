@@ -14,5 +14,6 @@
 - (IBAction)loginBtn:(id)sender;
 - (IBAction)ftpDownloadBtn:(id)sender;
 - (IBAction)ftpUploadBtn:(id)sender;
+- (IBAction)obtainDir:(id)sender;
 
 @end

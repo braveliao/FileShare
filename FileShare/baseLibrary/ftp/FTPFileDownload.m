@@ -109,7 +109,6 @@
 
 //test
 - (void)ftpDownload {
-    CFReadStreamRef ftpStream2;
     NSURL *url;
     
     //获得地址
@@ -123,6 +122,7 @@
     [self.fileStream open];
     
     // 打开CFFTPStream
+    CFReadStreamRef ftpStream2;
     ftpStream2 = CFReadStreamCreateWithFTPURL(NULL, (CFURLRef) url);
     self.networkStream = (NSInputStream *) ftpStream2;
     assert(ftpStream2 != NULL);
