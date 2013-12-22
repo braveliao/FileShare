@@ -11,9 +11,10 @@
 @interface ViewController : UIViewController {
 }
 
+@property (nonatomic, strong) IBOutlet UITextField *userNameTextfield;
+@property (nonatomic, strong) IBOutlet UITextField *passWordTextField;
+@property (nonatomic, strong) IBOutlet UITextField *ipTextField;
+
 - (IBAction)loginBtn:(id)sender;
-- (IBAction)ftpDownloadBtn:(id)sender;
-- (IBAction)ftpUploadBtn:(id)sender;
-- (IBAction)obtainDir:(id)sender;
 
 @end

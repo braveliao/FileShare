@@ -11,5 +11,7 @@
 @interface FileListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *_tableView;
+@property (strong, nonatomic) NSArray *dataArray;
+@property (strong, nonatomic) NSString *currentPath;
 
 @end

@@ -15,6 +15,8 @@
 @implementation FileListViewController
 
 @synthesize _tableView;
+@synthesize dataArray;
+@synthesize currentPath;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,7 +42,7 @@
 //#pram tableview datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return [self.dataArray count];
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -54,7 +56,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableViewId];
     }
-    cell.textLabel.text = @"test";
+    cell.textLabel.text = [dataArray objectAtIndex:indexPath.row];
     
     return cell;
 }

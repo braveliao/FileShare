@@ -12,6 +12,7 @@
 #import "FTPFileUpload.h"
 #import "FTPFileDownload.h"
 #import "FTPFileList.h"
+#import "Util.h"
 
 @interface ViewController ()
 
@@ -21,6 +22,8 @@
 @end
 
 @implementation ViewController
+
+@synthesize ipTextField, userNameTextfield, passWordTextField;
 
 - (void)viewDidLoad
 {
@@ -45,29 +48,6 @@
     NSLog(@"download file...");
 }
 
-- (IBAction)obtainDir:(id)sender
-{
-//    [self.fileListAdapter startReceive];
-        char *host = "192.168.1.107";
-        int port = 21;
-        char *user = "liaoyong";
-        char *pwd = "redcdn";
-        int socketfd = ftp_connect(host, port, user, pwd);
-        NSLog(@"result: %d",socketfd);
-        if (socketfd < 0) {
-            NSLog(@"login ftp error,result: %d",socketfd);
-            return;
-        }
-    
-        char *dirPath = "/home/liaoyong/";
-    void *data ;
-    unsigned long long data_len = 0;
-    int ss = ftp_list(socketfd, dirPath, &data, &data_len);
-    NSLog(@"ss:%d",ss);
-    NSString *dirString = [[NSString alloc] initWithBytes:data length:data_len encoding:NSUTF8StringEncoding];
-    NSLog(@"dirsstring:%@",dirString);
-    NSLog(@"obtain dir...");
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -77,18 +57,29 @@
 
 - (IBAction)loginBtn:(id)sender
 {
-    char *host = "192.168.1.107";
+    char *host = [Util convertStringToChar:self.ipTextField.text];
     int port = 21;
-    char *user = "liaoyong";
-    char *pwd = "redcdn";
-    int result = ftp_connect(host, port, user, pwd);
-    NSLog(@"result: %d",result);
-    if (result < 0) {
-        NSLog(@"login ftp error,result: %d",result);
+    char *user = [Util convertStringToChar:self.userNameTextfield.text];
+    char *pwd = [Util convertStringToChar:self.passWordTextField.text];
+    int socketfd = ftp_connect(host, port, user, pwd);
+    NSLog(@"result: %d",socketfd);
+    if (socketfd < 0) {
+        NSLog(@"login ftp error,result: %d",socketfd);
         return;
     }
     
+    char *dirPath = "/";
+    void *data ;
+    unsigned long long data_len = 0;
+    int ss = ftp_list(socketfd, dirPath, &data, &data_len);
+    NSLog(@"ftp_list_result:%d",ss);
+    NSString *dirString = [[NSString alloc] initWithBytes:data length:data_len encoding:NSUTF8StringEncoding];
+    NSArray *dataArray = [Util dealDirData:dirString];
+    NSLog(@"dataArray:%@",dataArray);
+    
     FileListViewController *ctrView = [[FileListViewController alloc] init];
+    ctrView.dataArray = dataArray;
+    ctrView.currentPath = @"/";
     [self.navigationController pushViewController:ctrView animated:YES];
 }
 @end
